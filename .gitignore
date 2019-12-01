@@ -75,6 +75,7 @@ orleans.codegen.cs
 *.csproj
 *.txt
 AoCTest*
+*.vs
 
 # Paket dependency manager
 .paket/paket.exe
