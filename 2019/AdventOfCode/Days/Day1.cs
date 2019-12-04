@@ -15,7 +15,7 @@ namespace AdventOfCode
         public static int Part1()
         {
             int totalFuel = 0;
-            string[] input = ReadFile();
+            string[] input = Utility.ReadLinesIntoStringArray("Day1.txt");
 
             foreach (var data in input)
             {
@@ -30,7 +30,7 @@ namespace AdventOfCode
 
         public static long Part2()
         {
-            string[] input = ReadFile();
+            string[] input = Utility.ReadLinesIntoStringArray("Day1.txt");
             long totalFuel = 0;
 
             foreach(var data in input)
@@ -51,22 +51,6 @@ namespace AdventOfCode
             return 0;
         }
 
-
-        private static string GetApplicationRoot()
-        {
-            var exePath = Path.GetDirectoryName(System.Reflection
-                              .Assembly.GetExecutingAssembly().CodeBase);
-            Regex appPathMatcher = new Regex(@"(?<!fil)[A-Za-z]:\\+[\S\s]*?(?=\\+bin)");
-            var appRoot = appPathMatcher.Match(exePath).Value;
-            return appRoot;
-        }
-
-        private static string[] ReadFile()
-        {
-            string path = Path.Combine(GetApplicationRoot(), @"Input\Day1.txt");
-            string[] input = File.ReadAllLines(path);
-            return input;
-        }
     } 
 }
 
